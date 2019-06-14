@@ -1,0 +1,36 @@
+{
+  "name": "agrobook-backend",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "start:dev": "nodemon --inspect server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhonalchirinos/agrobook-backend.git"
+  },
+  "author": "rhonalchirinos@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhonalchirinos/agrobook-backend/issues"
+  },
+  "homepage": "https://github.com/rhonalchirinos/agrobook-backend#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parse": "^0.1.0",
+    "bookshelf": "^0.15.1",
+    "chalk": "^2.4.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^5.3.1",
+    "jwt-simple": "^0.5.6",
+    "knex": "^0.17.6",
+    "pg": "^7.11.0"
+  }
+}
