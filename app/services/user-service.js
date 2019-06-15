@@ -1,7 +1,7 @@
 
 'use strict';
 
-const { User } = require('./../models');
+const { User, Token } = require('./../models');
 
 const bcrypt = require('bcrypt');
 
@@ -15,6 +15,33 @@ class UserService {
         return await User.fetchAll();
     }
 
+
+    /**
+     * @description decode token 
+     * @return users[]
+     */
+    static async decodeToken( data) {
+        
+        const token = await Token.where('token', data).fetch( {
+            withRelated: [
+                'user'
+            ]
+        });
+        if( token) {
+            return token.relations.user;
+        }
+        return null;
+    }
+ 
+    /**
+     * @description decode token 
+     * @return users[]
+     */
+    static async logout(data) {
+        const token = await Token.where('token', data).fetch();
+        await token.destroy();
+    }
+
     /**
      * @description login
      * @return users || null
@@ -23,12 +50,22 @@ class UserService {
         const user = await User.where('rut', rut).fetch();
         const match = await bcrypt.compare(password, user.get('password'));
         if (match) {
-            const token = await bcrypt.hash(Math.random().toString(), 10);
-            // store token 
+            const token = new Token({
+                token: await bcrypt.hash(Math.random().toString(), 10),
+                user_id: user.get('id')
+            });
+            await token.save();
             return {
-                token: token,
+                token: token.get('token'),
                 type: 'Bearer',
-                user: user
+                data: {
+                    id: user.id,
+                    rut: user.attributes.rut,
+                    name: user.attributes.name,
+                    last_name: user.attributes.last_name,
+                    email: user.attributes.email,
+                    role_id: user.attributes.role_id
+                }
             };
         }
         return null;
