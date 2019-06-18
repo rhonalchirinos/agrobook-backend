@@ -48,6 +48,9 @@ class UserService {
      */
     static async login({ rut, password }) {
         const user = await User.where('rut', rut).fetch();
+        if (!user){
+            return null;
+        }
         const match = await bcrypt.compare(password, user.get('password'));
         if (match) {
             const token = new Token({

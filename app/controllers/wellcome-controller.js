@@ -9,7 +9,6 @@ class WellcomeController {
             data: await UserService.all()
         });
     }
-
 }
 
 module.exports = WellcomeController;
