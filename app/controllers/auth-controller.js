@@ -33,7 +33,6 @@ class AuthAdminController {
      */
     static async logout(req, res) {
         const token = req.headers.authorization.split(" ")[1];
-        console.log('-----------', token)
         await UserService.logout(token);
         return res.status(204).json({});
     }

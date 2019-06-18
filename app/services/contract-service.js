@@ -11,7 +11,6 @@ class ContractService {
      */
     static async all(user) {
         if (user.get('role_id') === 1) {
-            console.log('ROLEEe', (await Contract.fetchAll()).toJSON())
             return await Contract.fetchAll({
                 withRelated: ['user', 'farmer']
             });

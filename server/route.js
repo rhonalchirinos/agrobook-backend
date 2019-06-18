@@ -8,7 +8,7 @@ router.use(auth);
 
 const { checkSchema } = require('express-validator/check');
 
-const { WellcomeController, AuthController, ContractController } = require('../app/controllers');
+const { WellcomeController, AuthController, ContractController, FarmerController } = require('../app/controllers');
 const { AuthValidation, ContractValidation, ContractVisitValidation, ContractCloseValidation } = require('../app/validations');
 
 module.exports = (app) => {
@@ -17,6 +17,8 @@ module.exports = (app) => {
     free.post('/login', checkSchema(AuthValidation), AuthController.login);
 
     router.delete('/logout', AuthController.logout);
+
+    router.get('/farmers', FarmerController.index);
 
     router.get('/contracts', ContractController.index);
     router.post('/contracts', checkSchema(ContractValidation), ContractController.create);

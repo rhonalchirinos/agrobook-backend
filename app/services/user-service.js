@@ -15,6 +15,15 @@ class UserService {
         return await User.fetchAll();
     }
 
+    /**
+     * @description all
+     * @return users[]
+     */
+    static async farmers() {
+        return await User.where({ role_id: 2 }).fetchAll();
+    }
+
+
 
     /**
      * @description decode token 
