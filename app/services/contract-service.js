@@ -11,11 +11,11 @@ class ContractService {
      */
     static async all(user) {
         if (user.get('role_id') === 1) {
-            return await Contract.fetchAll({
+            return await Contract.forge().orderBy('created_at', 'DESC').fetchAll({
                 withRelated: ['user', 'farmer']
             });
         }
-        return await Contract.where('farmer_id', user.get('id')).fetchAll({
+        return await Contract.forge().orderBy('created_at', 'DESC').where('farmer_id', user.get('id')).fetchAll({
             withRelated: ['user', 'farmer']
         });
     }
