@@ -6,6 +6,7 @@ const bookshelf = require('bookshelf');
 let connection = null;
 
 if(process.env.DATABASE_URL) {
+	console.log( 'DATABASE ',process.env.DATABASE_URL);
 	connection = knex({
 		client: 'pg',
 		connection: {

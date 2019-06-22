@@ -12,7 +12,7 @@ const { WellcomeController, AuthController, ContractController, FarmerController
 const { AuthValidation, ContractValidation, ContractVisitValidation, ContractCloseValidation } = require('../app/validations');
 
 module.exports = (app) => {
-
+    console.log('Routes');
     free.get('/', WellcomeController.index);
     free.post('/login', checkSchema(AuthValidation), AuthController.login);
 
@@ -28,7 +28,8 @@ module.exports = (app) => {
     router.post('/contracts/:id/view', checkSchema(ContractVisitValidation), ContractController.view);
     router.post('/contracts/:id/close', checkSchema(ContractCloseValidation), ContractController.close);
 
-
     app.use('', free);
     app.use('', router);
+    console.log('END ROUTES');
+
 };
