@@ -52,7 +52,7 @@ INSERT INTO roles(name) values('adminsitradtor'), ('agricultor');
 /**
   * data user 
   */
-INSERT INTO users(rut, password, name, last_name, email, role_id) values
+INSERT INTO users(rut, password, name, last_name, email, cl) values
 ('123456789', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','admin', 'admin', 'admin@admin.com', 1),
 ('111222356', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Maria', 'Adan', 'maria@gmail.com', 2),
 ('723456789', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Angelica', 'Rodriguez', 'angelica@gmail.com', 2),

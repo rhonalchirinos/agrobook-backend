@@ -9,9 +9,19 @@ class ContractService {
      * @description all
      * @return contract[]
      */
-    static async all(user) {
+    static async all(user, status) {
         if (user.get('role_id') === 1) {
+            if (status) {
+                return await Contract.forge().where({ status: status }).orderBy('created_at', 'DESC').fetchAll({
+                    withRelated: ['user', 'farmer']
+                });
+            }
             return await Contract.forge().orderBy('created_at', 'DESC').fetchAll({
+                withRelated: ['user', 'farmer']
+            });
+        }
+        if (status) {
+            return await Contract.forge().where({ status: status }).where('farmer_id', user.get('id')).orderBy('created_at', 'DESC').fetchAll({
                 withRelated: ['user', 'farmer']
             });
         }
@@ -52,7 +62,10 @@ class ContractService {
         const contract = await Contract.where('id', id).fetch({
             withRelated: ['user', 'farmer']
         });
-        await contract.save(value);
+        await contract.save({
+            floor_power: value.floor_power,
+            planting_date: value.planting_date,
+        });
         return contract;
     }
 

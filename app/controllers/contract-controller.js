@@ -13,7 +13,8 @@ class ContractController {
      */
     static async index(req, res) {
         const user = req.user;
-        const elements = await ContractService.all(user);
+        const status = req.query.status;
+        const elements = await ContractService.all(user, status);
         return res.status(200).json(elements);
     }
 
