@@ -53,8 +53,14 @@ INSERT INTO roles(name) values('adminsitradtor'), ('agricultor');
   * data user 
   */
 INSERT INTO users(rut, password, name, last_name, email, role_id) values
-('123456789', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','admin', 'admin', 'admin@admin.com', 1),
-('111222356', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Maria', 'Adan', 'maria@gmail.com', 2),
-('723456789', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Angelica', 'Rodriguez', 'angelica@gmail.com', 2),
-('323456789', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Ricardo', 'Peralta', 'ricardo@gmail.com', 2),
-('423456789', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Juan', 'Ortiz', 'juan@gmail.com', 2);
+
+('12.123.456-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Administrador', '', 'admin@admin.com', 1),
+('12.123.111-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Maria', 'Adan', 'maria@gmail.com', 2),
+('12.123.222-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Angelica', 'Rodriguez', 'angelica@gmail.com', 2),
+('12.123.333-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Ricardo', 'Peralta', 'ricardo@gmail.com', 2),
+('12.123.444-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Marcela Carolina', 'Fredes Vidal', 'fvidalo@gmail.com', 2);
+('12.123.555-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Arturo ', 'Vidal', 'avidal@gmail.com', 2);
+('12.123.777-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Juan Luis', 'Gerra', 'ljgerra@gmail.com', 2);
+('12.123.888-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Josefina', 'Ortega', 'josefinao@gmail.com', 2);
+('12.123.999-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Rhonal ', 'chirinos', 'ronalkk@gmail.com', 2);
+('12.123.000-K', '$2b$10$48Fk2qgPBG8El9VnwUkJSewpR2aIpgGENIAVrvd9cPxTvn0dEzjkC','Francis', 'Ortega Caroni', 'fcarino.12@gmail.com', 2);
