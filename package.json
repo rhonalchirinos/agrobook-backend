@@ -22,7 +22,7 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parse": "^0.1.0",
     "bookshelf": "^0.15.1",
     "chalk": "^2.4.2",
